@@ -1,4 +1,5 @@
 # -*-coding=utf-8-*-
+from DB.SqlHelper import SqlHelper
 from PS import parser
 import MySQLdb
 import logging
@@ -9,7 +10,7 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 logger = logging.getLogger("DB")
 logging.info('DB')
-class MySqlHelper():
+class MySqlHelper(SqlHelper):
     def __init__(self):
         self.Stockparser = parser.Stockparser()
         self.database = MySQLdb.connect(host='localhost', port=3306, user='root', passwd='123456', connect_timeout=5,
